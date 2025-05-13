@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pecunia Budget</title>
+
+  <!-- Fuente Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <link href="{{ url_for('static', filename='css/tailwind.css') }}" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- Hero con fondo -->
+  <div class="relative bg-cover bg-center h-[90vh]" style="background-image: url('{{ url_for('static', filename='img/hero.jpg') }}');">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    <!-- Navbar -->
+    <header class="absolute top-0 left-0 w-full z-10">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="h-10" />
+          <span class="text-xl font-bold text-white">Pecunia Budget</span>
+        </div>
+        <nav class="flex items-center gap-6">
+          <a href="#" class="text-white font-medium hover:text-gray-300">SOBRE NOSOTROS</a>
+          <a href="#" class="text-white font-medium hover:text-gray-300">EVENTOS</a>
+          <a href="#" class="text-white font-medium hover:text-gray-300">CONTACTO</a>
+          <a href="https://instagram.com" target="_blank" class="text-white hover:text-gray-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.25-2a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5z"/>
+            </svg>
+          </a>
+          <a href="https://facebook.com" target="_blank" class="text-white hover:text-gray-300">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M13 3h4a1 1 0 0 1 1 1v3h-3.5a.5.5 0 0 0-.5.5V10h4l-.5 4h-3.5v10h-4V14H8v-4h3V7.5A4.5 4.5 0 0 1 15.5 3H17v3h-4V3z"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Texto principal -->
+    <div class="relative z-10 flex flex-col justify-center items-start h-full max-w-4xl mx-auto px-6 text-white text-left">
+      <h1 class="text-5xl font-bold mb-4">Presupuesto Paramétrico de Construcción</h1>
+      <p class="text-lg mb-6">Selecciona el tipo de casa que deseas cotizar de manera profesional, rápida y confiable.</p>
+      <a href="#opciones" class="bg-teal-500 hover:bg-teal-600 text-white px-6 py-3 rounded-lg shadow-lg transition">Cotizar Ahora</a>
+    </div>
+  </div>
+
+  <!-- Opciones -->
+  <section id="opciones" class="bg-gray-50 py-20 px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">Selecciona tu tipo de casa</h2>
+      <p class="text-gray-600">Cada opción representa un rango de metros cuadrados construidos</p>
+    </div>
+
+    <!-- Cards con botones fuera del recuadro -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+
+      <!-- Card 1 -->
+      <div class="flex flex-col items-center relative">
+        <div class="mb-6 -mt-8 z-10">
+          <button class="bg-black text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-800 transition text-sm">
+            CASA DE 140 A 190 M2
+          </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition w-full max-w-sm">
+          <img src="{{ url_for('static', filename='img/casa1.jpg') }}" alt="Casa 1" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex flex-col items-center relative">
+        <div class="mb-6 -mt-8 z-10">
+          <button class="bg-black text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-800 transition text-sm">
+            CASA DE 90 A 139 M2
+          </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition w-full max-w-sm">
+          <img src="{{ url_for('static', filename='img/casa2.jpg') }}" alt="Casa 2" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex flex-col items-center relative">
+        <div class="mb-6 -mt-8 z-10">
+          <button class="bg-black text-white px-6 py-2 rounded-full shadow-lg hover:bg-gray-800 transition text-sm">
+            CASA DE 191 A 250 M2
+          </button>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transition w-full max-w-sm">
+          <img src="{{ url_for('static', filename='img/casa3.jpg') }}" alt="Casa 3" class="w-full h-64 object-cover" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
